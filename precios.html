@@ -1,48 +1,257 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparador de Planes</title>
-    <link rel="stylesheet" href="styles/precios.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compará nuestros planes</title>
+  <link rel="stylesheet" href="styles/precios.css" />
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/loader.css">
+  <link rel="stylesheet" href="styles/footer.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Planes y Precios</h1>
-        <div class="toggle-container">
-            <label class="toggle">
-                <input type="checkbox" id="toggle">
-                <span class="slider"></span>
-            </label>
-            <span class="toggle-label">Mensual</span>
-            <span class="toggle-label">Anual</span>
+    <div id="loader-wrapper" class="fade-out">
+        <div class="wrapper">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Plan</th>
-                    <th class="price monthly">Precio Mensual</th>
-                    <th class="price annual">Precio Anual</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Plan Básico</td>
-                    <td class="monthly">$10 <span class="tooltip">Incluye acceso ilimitado</span></td>
-                    <td class="annual">$100 <span class="tooltip">Incluye acceso ilimitado</span></td>
-                </tr>
-                <tr>
-                    <td>Plan Pro</td>
-                    <td class="monthly">$20 <span class="tooltip">Incluye soporte prioritario</span></td>
-                    <td class="annual">$200 <span class="tooltip">Incluye soporte prioritario</span></td>
-                </tr>
-                <tr>
-                    <td>Plan Premium</td>
-                    <td class="monthly">$30 <span class="tooltip">Incluye todas las características</span></td>
-                    <td class="annual">$300 <span class="tooltip">Incluye todas las características</span></td>
-                </tr>
-            </tbody>
-        </table>
+      </div>
+      
+
+      <header class="header">
+        <img src="images/imagen.png" alt="Fondo" class="img-fondo" />
+
+        <div class="container">
+          <nav class="menu">
+            <input type="checkbox" id="toggle-menu" hidden />
+            <label for="toggle-menu" class="desplegar"><span> ☰ </span></label>
+            <ul class="mega-menu">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="clases.html">Clases</a></li>
+              <li><a href="entrenadores.html">Entrenadores</a></li>
+              <li><a href="precios.html">Precios</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </nav>
+      
+        </div>
+      </header>
+
+
+  <h1 class="main-title">Compará nuestros planes</h1>
+
+  <div class="toggle-container">
+    <span>Mostar planes anuales</span>
+    <label class="switch">
+      <input type="checkbox" id="price-toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="container">
+    <div class="card basic">
+      <div class="card__content">
+        <div class="card__image"></div>
+        <h3 class="card__title">Plan Básico</h3>
+        <p class="card__description">Acceso al gimnasio y vestuarios de 8 a 20hs.</p>
+        <div class="card__footer">
+          <span class="card__price" data-mensual="12000" data-anual="132000">$12000</span>
+          <div class="card__button">
+            <svg height="16" width="16" viewBox="0 0 24 24">
+                <path
+                  stroke-width="2"
+                  stroke="currentColor"
+                  d="M4 12H20M12 4V20"
+                  fill="currentColor"
+                ></path>
+              </svg>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="card regular">
+      <div class="card__content">
+        <div class="card__image"></div>
+        <span class="card__badge">POPULAR</span>
+        <h3 class="card__title">Plan Regular</h3>
+        <p class="card__description">Acceso 24hs al gimansio e incluye clases grupales y zona de peso libre.</p>
+        <div class="card__footer">
+          <span class="card__price" data-mensual="18000" data-anual="198000">$18000</span>
+          <div class="card__button">
+            <svg height="16" width="16" viewBox="0 0 24 24">
+                <path
+                  stroke-width="2"
+                  stroke="currentColor"
+                  d="M4 12H20M12 4V20"
+                  fill="currentColor"
+                ></path>
+              </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card premium">
+      <div class="card__content">
+        <div class="card__image"></div>
+        <h3 class="card__title">Plan Premium</h3>
+        <p class="card__description">Todo incluido + sesiones totalmente personalizadas.</p>
+        <div class="card__footer">
+          <span class="card__price" data-mensual="25000" data-anual="275000">$25000</span>
+          <div class="card__button"> 
+            <svg height="16" width="16" viewBox="0 0 24 24">
+                <path
+                  stroke-width="2"
+                  stroke="currentColor"
+                  d="M4 12H20M12 4V20"
+                  fill="currentColor"
+                ></path>
+              </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('price-toggle');
+    const prices = document.querySelectorAll('.card__price');
+
+    toggle.addEventListener('change', () => {
+      prices.forEach(price => {
+        price.textContent = toggle.checked
+          ? `$${price.dataset.anual}`
+          : `$${price.dataset.mensual}`;
+      });
+    });
+  </script>
+
+<section class="pricing-table">
+    <h2 class="table-title">Comparación de precios</h2>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Plan</th>
+          <th>Precio Mensual</th>
+          <th>Precio Anual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Básico</td>
+          <td>$12.000</td>
+          <td>$132.000</td>
+        </tr>
+        <tr class="highlight">
+          <td>Regular</td>
+          <td>$18.000</td>
+          <td>$198.000</td>
+        </tr>
+        <tr>
+          <td>Premium</td>
+          <td>$25.000</td>
+          <td>$275.000</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  
+  <section class="benefits-table">
+    <h2 class="table-title">Comparación de beneficios</h2>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Beneficio</th>
+          <th>Básico</th>
+          <th>Regular</th>
+          <th>Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Horario de acceso</td>
+          <td>8:00 a 20:00 hs</td>
+          <td>24 hs</td>
+          <td>24 hs</td>
+        </tr>
+        <tr>
+          <td>Uso de máquinas</td>
+          <td>♾️</td>
+          <td>♾️</td>
+          <td>♾️</td>
+        </tr>
+        <tr>
+          <td>Vestuarios</td>
+          <td>✔️</td>
+          <td>✔️</td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td>Clases grupales</td>
+          <td>✖️</td>
+          <td>✔️</td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td>Zona de peso libre</td>
+          <td>✖️</td>
+          <td>✔️</td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td>Rutinas personalizadas</td>
+          <td>✖️</td>
+          <td>✖️</td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td>Seguimiento nutricional</td>
+          <td>✖️</td>
+          <td>✖️</td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td>Evaluaciones físicas mensuales</td>
+          <td>✖️</td>
+          <td>✖️</td>
+          <td>✔️</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <footer class="footer">
+    <div class="footer-column mapa">
+      <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="200" style="border:0;" allowfullscreen loading="lazy"></iframe>
+    </div>
+  
+    <div class="footer-column contacto">
+      <h3>Contacto</h3>
+      <p>📍 Dirección: Calle Ficticia 123</p>
+      <p>📞 Teléfono: +54 9 123 456 789</p>
+      <p>📧 Email: contacto@shirocenter.com</p>
+    </div>
+  
+    <div class="footer-column newsletter">
+      <h4>Inscribase a nuestro newsletter!!!</h4>
+      <div class="input__container">
+        <div class="shadow__input"></div>
+        <button class="input__button__shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="20px" height="20px" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 
+                     0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </button>
+        <input type="email" name="email" class="input__search" placeholder="ingrese su email" />
+      </div>
+    </div>
+  </footer>
+  
 </body>
 </html>

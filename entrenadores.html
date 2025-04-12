@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="styles/header.css" />
   <link rel="stylesheet" href="styles/entrenadores.css" />
   <link rel="stylesheet" href="styles/loader.css" />
+  <link rel="stylesheet" href="styles/footer.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Special+Gothic+Condensed+One&display=swap" rel="stylesheet" />
@@ -52,10 +53,13 @@
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
-          <h2>Entrenador 1</h2>
+          <h2 class="titulo-entrenador">Carolina Vega</h2>
+          <img src="images/carolina.jpg" alt="Carolina Vega" class="entrenador-img" />
           <p>Especialidad: Fitness</p>
           <div class="skill-bar">
+            <div class="skill" style="width: 87%;">Tecnica 87%</div>
             <div class="skill" style="width: 90%;">Fuerza 90%</div>
+            <div class="skill" style="width: 80%;">Coordinacion 80%</div>
           </div>
         </div>
         <div class="card-back">
@@ -76,10 +80,13 @@
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
-          <h2>Entrenador 2</h2>
+          <h2 class="titulo-entrenador">Leandro Fernandez</h2>
+          <img src="images/leandro.jpg" alt="Leandro Fernandez" class="entrenador-img" />
           <p>Especialidad: Yoga</p>
           <div class="skill-bar">
-            <div class="skill" style="width: 80%;">Flexibilidad 80%</div>
+            <div class="skill" style="width: 95%;">Flexibilidad 95%</div>
+            <div class="skill" style="width: 80%;">Tecnica 80%</div>
+            <div class="skill" style="width: 83%;">Coordinacion 83%</div>
           </div>
         </div>
         <div class="card-back">
@@ -116,5 +123,34 @@
       });
     });
   </script>
+
+<footer class="footer">
+  <div class="footer-column mapa">
+    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="200" style="border:0;" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <div class="footer-column contacto">
+    <h3>Contacto</h3>
+    <p>📍 Dirección: Calle Ficticia 123</p>
+    <p>📞 Teléfono: +54 9 123 456 789</p>
+    <p>📧 Email: contacto@shirocenter.com</p>
+  </div>
+
+  <div class="footer-column newsletter">
+    <h4>Inscribase a nuestro newsletter!!!</h4>
+    <div class="input__container">
+      <div class="shadow__input"></div>
+      <button class="input__button__shadow">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="20px" height="20px" viewBox="0 0 24 24">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 
+                   0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+      </button>
+      <input type="email" name="email" class="input__search" placeholder="ingrese su email" />
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   animation: fadeOut 1s forwards;
-  animation-delay: 1s;
+  animation-delay: 1.5s; /* duración que se ve el loader */
 }
 
 /* ANIMACIÓN DE DESVANECER */

@@ -1,61 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog de Fitness</title>
-    <link rel="stylesheet" href="styles/blog.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog de Fitness</title>
+  <link rel="stylesheet" href="styles/blog.css" />
+  <link rel="stylesheet" href="styles/header.css" />
+  <link rel="stylesheet" href="styles/loader.css" />
+  <link rel="stylesheet" href="styles/footer.css">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Blog de Fitness</h1>
-            <nav>
-                <ul>
-                    <li><a href="#categoria1">Nutrición</a></li>
-                    <li><a href="#categoria2">Entrenamiento</a></li>
-                    <li><a href="#categoria3">Bienestar</a></li>
-                </ul>
-            </nav>
-        </header>
 
-        <main>
-            <article class="post" id="categoria1">
-                <h2>5 Recetas Saludables para el Desayuno</h2>
-                <p class="tags">Tags: <span class="tag">Nutrición</span> <span class="tag">Desayuno</span></p>
-                <p>Comienza tu día con energía y salud. Aquí te mostramos 5 recetas deliciosas y nutritivas para el desayuno.</p>
-            </article>
+<!-- Filtros -->
+<input type="radio" name="filter" id="filtro-todo" checked hidden>
+<input type="radio" name="filter" id="filtro-nutricion" hidden>
+<input type="radio" name="filter" id="filtro-entrenamiento" hidden>
+<input type="radio" name="filter" id="filtro-bienestar" hidden>
 
-            <article class="post" id="categoria2">
-                <h2>Entrenamiento de Fuerza para Principiantes</h2>
-                <p class="tags">Tags: <span class="tag">Entrenamiento</span> <span class="tag">Fuerza</span></p>
-                <p>Descubre cómo iniciar tu viaje en el entrenamiento de fuerza con estos ejercicios básicos.</p>
-            </article>
+<body class="loading">
 
-            <article class="post" id="categoria3">
-                <h2>La Importancia del Descanso en el Fitness</h2>
-                <p class="tags">Tags: <span class="tag">Bienestar</span> <span class="tag">Descanso</span></p>
-                <p>El descanso es fundamental para el rendimiento físico. Aprende por qué es tan importante.</p>
-            </article>
-        </main>
-
-        <section class="comments">
-            <h3>Comentarios</h3>
-            <div class="comment">
-                <div class="avatar"></div>
-                <div class="comment-content">
-                    <strong>Juan Pérez</strong>
-                    <p>¡Excelente artículo! Me encantaron las recetas.</p>
-                </div>
-            </div>
-            <div class="comment">
-                <div class="avatar"></div>
-                <div class="comment-content">
-                    <strong>María López</strong>
-                    <p>Gracias por los consejos de entrenamiento, son muy útiles.</p>
-                </div>
-            </div>
-        </section>
+  <!-- Loader -->
+  <div id="loader-wrapper">
+    <div class="wrapper">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
     </div>
+  </div>
+
+  <!-- Header con menú e imagen -->
+  <header class="header">
+    <img src="images/imagen.png" alt="Fondo" class="img-fondo" />
+    <div class="container">
+      <nav class="menu">
+        <input type="checkbox" id="toggle-menu" hidden />
+        <label for="toggle-menu" class="desplegar"><span> ☰ </span></label>
+        <ul class="mega-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="clases.html">Clases</a></li>
+          <li><a href="entrenadores.html">Entrenadores</a></li>
+          <li><a href="precios.html">Precios</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Blog de Fitness</h1>
+
+      <!-- Filtros por tags -->
+  <div class="filters">
+    <label for="filtro-todo">Todos</label>
+    <label for="filtro-nutricion">Nutrición</label>
+    <label for="filtro-entrenamiento">Entrenamiento</label>
+    <label for="filtro-bienestar">Bienestar</label>
+  </div>
+
+
+    <main class="posts">
+      <article class="post destacada izquierda nutricion">
+        <h2>5 Recetas Saludables para el Desayuno</h2>
+        <p class="tags">Tags: <span class="tag">Nutrición</span></p>
+        <p>Comienza tu día con energía y salud con estas 5 recetas deliciosas.</p>
+      </article>
+
+      <article class="post derecha entrenamiento">
+        <h2>Entrenamiento de Fuerza para Principiantes</h2>
+        <p class="tags">Tags: <span class="tag">Entrenamiento</span></p>
+        <p>Descubre cómo empezar a entrenar fuerza con ejercicios básicos.</p>
+      </article>
+
+      <article class="post izquierda bienestar">
+        <h2>La Importancia del Descanso</h2>
+        <p class="tags">Tags: <span class="tag">Bienestar</span></p>
+        <p>El descanso es clave para mejorar el rendimiento físico.</p>
+      </article>
+    </main>
+
+    <!-- Comentarios -->
+    <section class="comments">
+      <h3>Comentarios</h3>
+      <div class="comment">
+        <div class="avatar"></div>
+        <div class="comment-content">
+          <strong>Juan Pérez</strong>
+          <p>¡Excelente artículo! Me encantaron las recetas.</p>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="avatar"></div>
+        <div class="comment-content">
+          <strong>María López</strong>
+          <p>Gracias por los consejos de entrenamiento, muy útiles.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    window.addEventListener("load", function () {
+      document.body.classList.remove("loading");
+      document.getElementById("loader-wrapper").style.display = "none";
+    });
+  </script>
+
+
+<footer class="footer">
+  <div class="footer-column mapa">
+    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="200" style="border:0;" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <div class="footer-column contacto">
+    <h3>Contacto</h3>
+    <p>📍 Dirección: Calle Ficticia 123</p>
+    <p>📞 Teléfono: +54 9 123 456 789</p>
+    <p>📧 Email: contacto@shirocenter.com</p>
+  </div>
+
+  <div class="footer-column newsletter">
+    <h4>Inscribase a nuestro newsletter!!!</h4>
+    <div class="input__container">
+      <div class="shadow__input"></div>
+      <button class="input__button__shadow">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="20px" height="20px" viewBox="0 0 24 24">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 
+                   0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+      </button>
+      <input type="email" name="email" class="input__search" placeholder="ingrese su email" />
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

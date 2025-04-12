@@ -54,14 +54,34 @@ body {
     box-sizing: border-box;
   }
   
+  .entrenador-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid #643ebb;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+
   .card-front {
     background: #f4f4f4;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start; /* antes estaba center */
     align-items: center;
+    padding-top: 30px; /* agregamos espacio arriba */
   }
   
+  .card-front h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 38px;
+    margin-bottom: 10px; /* separa del resto */
+  }
+  
+
   .card-back {
     background: #643ebb;
     color: white;

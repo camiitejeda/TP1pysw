@@ -4,67 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/clases.css" />
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/loader.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <title>Document</title>
 </head>
 <body>
-    
-  <section class="filtros">
-    <h2>Filtrar Clases</h2>
-    <label><input type="checkboxs" class="filtro" id="musculacion" /> Musculación</label>
-    <label><input type="checkbox" class="filtro" id="crossfit" /> CrossFit</label>
-    <label><input type="checkbox" class="filtro" id="yoga" /> Yoga</label>
-    <label><input type="checkbox" class="filtro" id="spinning" /> Spinning</label>
-  </section>
+  <div id="loader-wrapper" class="fade-out">
+    <div class="wrapper">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+  
 
+  <header class="header">
+    <img src="images/imagen.png" alt="Fondo" class="img-fondo" />
 
+    <div class="container">
+      <nav class="menu">
+        <input type="checkbox" id="toggle-menu" hidden />
+        <label for="toggle-menu" class="desplegar"><span> ☰ </span></label>
+        <ul class="mega-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="clases.html">Clases</a></li>
+          <li><a href="entrenadores.html">Entrenadores</a></li>
+          <li><a href="precios.html">Precios</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+  
+    </div>
+  </header>
+  
+<!-- Filtros por tags -->
+<section class="clases-container">
+  <!-- Radio Buttons para filtros -->
+  <input type="radio" name="filtro" id="filtro-todo" hidden checked>
+  <input type="radio" name="filtro" id="filtro-musculacion" hidden>
+  <input type="radio" name="filtro" id="filtro-crossfit" hidden>
+  <input type="radio" name="filtro" id="filtro-yoga" hidden>
+  <input type="radio" name="filtro" id="filtro-spinning" hidden>
 
+  <!-- Etiquetas -->
+  <div class="filters">
+    <label for="filtro-todo">Todos</label>
+    <label for="filtro-musculacion">Musculación</label>
+    <label for="filtro-crossfit">CrossFit</label>
+    <label for="filtro-yoga">Yoga</label>
+    <label for="filtro-spinning">Spinning</label>
+  </div>
 
-
-
-
-
-
+  <!-- Galería de tarjetas -->
   <section class="galeria">
-    <div class="tarjeta musculacion">
-      <img src="images/musculacion.jpg" alt="Clase de Musculación" />
-      <div class="overlay">Musculación - Lunes y Miércoles</div>
+    <div class="card musculacion">
+      <img src="images/musculacion.jpg" alt="Musculación">
+      <div class="overlay-text">Musculación</div>
     </div>
-    <div class="tarjeta crossfit">
-      <img src="images/crossfit.jpg" alt="Clase de CrossFit" />
-      <div class="overlay">CrossFit - Martes y Jueves</div>
+    <div class="card crossfit">
+      <img src="images/crossfit.jpg" alt="CrossFit">
+      <div class="overlay-text">CrossFit</div>
     </div>
-    <div class="tarjeta yoga">
-      <img src="images/yoga.jpg" alt="Clase de Yoga" />
-      <div class="overlay">Yoga - Viernes</div>
+    <div class="card yoga">
+      <img src="images/yoga.jpg" alt="Yoga">
+      <div class="overlay-text">Yoga</div>
     </div>
-    <div class="tarjeta spinning">
-      <img src="images/spinning.jpg" alt="Clase de Spinning" />
-      <div class="overlay">Spinning - Sábados</div>
+    <div class="card spinning">
+      <img src="images/spinning.jpg" alt="Spinning">
+      <div class="overlay-text">Spinning</div>
     </div>
   </section>
+</section>
 
-  <section class="horarios">
-    <h2>Horarios Semanales</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Día</th>
-          <th>Musculación</th>
-          <th>CrossFit</th>
-          <th>Yoga</th>
-          <th>Spinning</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Lunes</td><td>18:00 - 19:00</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>Martes</td><td>-</td><td>19:00 - 20:00</td><td>-</td><td>-</td></tr>
-        <tr><td>Miércoles</td><td>18:00 - 19:00</td><td>-</td><td>-</td><td>-</td></tr>
-        <tr><td>Jueves</td><td>-</td><td>19:00 - 20:00</td><td>-</td><td>-</td></tr>
-        <tr><td>Viernes</td><td>-</td><td>-</td><td>17:00 - 18:00</td><td>-</td></tr>
-        <tr><td>Sábado</td><td>-</td><td>-</td><td>-</td><td>10:00 - 11:00</td></tr>
-      </tbody>
-    </table>
-  </section>
+
+ <h2 id="titulo">Ven y transforma tu vida con nosotros</h2>
+ <!-- Galería de imágenes -->
+ <section class="gallery">
+  <div class="item"><img src="/images/imagen1.jpg" alt="Imagen 1"></div>
+  <div class="item"><img src="/images/imagen2.jpg" alt="Imagen 2"></div>
+  <div class="item"><img src="/images/imagen3.jpg"></div>
+  <div class="item"><img src="/images/imagen4.jpg" alt="Imagen 4"></div>
+  <div class="item"><img src="/images/imagen5.jpg" alt="Imagen 5"></div>
+  <div class="item"><img src="/images/imagen6.jpg" alt="Imagen 6"></div>
+  <div class="item"><img src="/images/imagen7.jpg" alt="Imagen 7"></div>
+
+</section>
+
+  
+<section class="horarios">
+  <h2>Horarios Semanales</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Día</th>
+        <th>Musculación</th>
+        <th>CrossFit</th>
+        <th>Yoga</th>
+        <th>Spinning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td id="dia">Lunes</td><td>08:00 - 09:00<br>18:00 - 19:00</td><td>10:00 - 11:00</td><td>-</td><td>19:00 - 20:00</td></tr>
+      <tr><td id="dia">Martes</td><td>08:00 - 09:00</td><td>19:00 - 20:00</td><td>09:00 - 10:00</td><td>18:00 - 19:00</td></tr>
+      <tr><td id="dia">Miércoles</td><td>08:00 - 09:00<br>18:00 - 19:00</td><td>-</td><td>10:00 - 11:00</td><td>-</td></tr>
+      <tr><td id="dia">Jueves</td><td>08:00 - 09:00</td><td>19:00 - 20:00</td><td>-</td><td>18:00 - 19:00</td></tr>
+      <tr><td id="dia">Viernes</td><td>09:00 - 10:00</td><td>-</td><td>17:00 - 18:00</td><td>08:00 - 09:00</td></tr>
+      <tr><td id="dia">Sábado</td><td>10:00 - 11:00</td><td>09:00 - 10:00</td><td>08:00 - 09:00</td><td>11:00 - 12:00</td></tr>
+    </tbody>
+  </table>
+</section>
+<footer class="footer">
+  <div class="footer-column mapa">
+    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="200" style="border:0;" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <div class="footer-column contacto">
+    <h3>Contacto</h3>
+    <p>📍 Dirección: Calle Ficticia 123</p>
+    <p>📞 Teléfono: +54 9 123 456 789</p>
+    <p>📧 Email: contacto@shirocenter.com</p>
+  </div>
+
+  <div class="footer-column newsletter">
+    <h4>Inscribase a nuestro newsletter!!!</h4>
+    <div class="input__container">
+      <div class="shadow__input"></div>
+      <button class="input__button__shadow">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="20px" height="20px" viewBox="0 0 24 24">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 
+                   0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+      </button>
+      <input type="email" name="email" class="input__search" placeholder="ingrese su email" />
+    </div>
+  </div>
+</footer>
+
 
 </body>
 </html>

@@ -1,31 +1,47 @@
 .contador {
     text-align: center;
     padding: 50px 0;
-    background-color: #f4f4f4; /* Color de fondo opcional */
+    background-color: #f4f4f4;
+
+    display: grid; /* nuevo */
+    grid-template-columns: repeat(3, 1fr); /* divide en 3 */
+    gap: 30px; /* espacio entre bloques */
+    justify-items: center; /* centra los bloques */
+}
+
+.bloque {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 300px;
 }
 
 .count {
     font-family: 'Montserrat', sans-serif; 
-    font-size: 48px; /* Tamaño del número */
-    font-weight: bolder; /* Negrita */
-    color: #654ebb; /* Color del número */
-    margin: 0; /* Elimina el margen */
-    animation: pulseAnimation 1.5s infinite; /* Aplica la animación en bucle */
+    font-size: 48px;
+    font-weight: bolder;
+    color: #654ebb;
+    margin: 0;
+    animation: pulseAnimation 1.5s infinite;
 }
 
-.contador p{
+.contador p {
     font-family: 'Montserrat', sans-serif; 
     font-weight: bold;
 }
 
+/* Animación existente */
 @keyframes pulseAnimation {
-    0% {
-        transform: scale(1); /* Tamaño original */
-    }
-    50% {
-        transform: scale(1.1); /* Aumenta el tamaño */
-    }
-    100% {
-        transform: scale(1); /* Regresa al tamaño original */
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contador {
+        grid-template-columns: 1fr; /* una sola columna en pantallas chicas */
     }
 }

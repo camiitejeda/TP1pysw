@@ -3,118 +3,138 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-}
-
-.container {
-    max-width: 800px;
+  }
+  
+  .container {
+    max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+  }
 
-header {
+  .container h1{
+    font-family: 'montserrat';
     text-align: center;
-}
-
-h1 {
-    margin-bottom: 10px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #4CAF50;
-}
-
-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.post {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px  5px rgba(0, 0, 0, 0.1);
-    opacity: 0; /* Oculto por defecto para el efecto de scroll */
-    transform: translateY(20px); /* Desplazado hacia abajo */
-    animation: reveal 0.5s forwards; /* Aplicar el efecto de revelado */
-}
-
-.tags {
-    font-size: 0.9em;
-    color: #777;
-}
-
-.tag {
-    background: #e0e0e0;
+    color: #643ebb;
+    padding: 20px;
+  }
+  
+  .filters {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .filters label {
+    background: #643ebb;
+    font-family: 'montserrat';
+    color: white;
+    padding: 8px 15px;
+    margin: 0 5px;
     border-radius: 5px;
-    padding: 3px 6px;
+    cursor: pointer;
+  }
+  
+  main.posts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .post {
+    display: none;
+    padding: 20px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .destacada {
+    background-color: #ded7f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-size: 1.1em;
+  }
+  
+  .izquierda {
+    border-left: 6px solid #643ebb;
+  }
+  .derecha {
+    border-right: 6px solid #643ebb;
+  }
+
+  .post h2{
+    font-family: 'montserrat';
+  }
+
+  .post p{
+    font-family: 'montserrat';
+    font-size: 15px;
+  }
+
+
+  .tags {
+    font-size: 0.9em;
+    font-family: 'montserrat';
+    font-weight: bold;
+    color: #0f012e;
+  }
+  .tag {
+    background: #c7b1f7;
+    font-family: 'montserrat';
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 2px 6px;
     margin-right: 5px;
-}
-
-.comments {
+  }
+  
+  /* Comentarios */
+  .comments {
     margin-top: 30px;
-}
+  }
 
-.comment {
+  .comments h3{
+    font-family: 'montserrat';
+    font-weight: bolder;
+  }
+  .comment {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-}
-
-.avatar {
+  }
+  .avatar {
     width: 40px;
     height: 40px;
-    background-color: #ccc;
+    background: #ccc;
     border-radius: 50%;
     margin-right: 10px;
-}
-
-.comment-content {
+    position: relative;
+  }
+  .avatar::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+  }
+  .comment-content {
     background: #f1f1f1;
-    border-radius: 5px;
     padding: 10px;
+    border-radius: 6px;
     max-width: 80%;
-}
+  }
 
-/* Efecto Scroll Reveal */
-@keyframes reveal {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+  .comment-content strong{
+    font-family: 'montserrat';
+  }
 
-/* Estilo responsivo */
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 5px 0;
-    }
-}
+  .comment-content p{
+    font-family: 'montserrat';
+  }  
+  /* FILTROS FUNCIONALES */
+  #filtro-todo:checked ~ .container main .post,
+  #filtro-nutricion:checked ~ .container main .nutricion,
+  #filtro-entrenamiento:checked ~ .container main .entrenamiento,
+  #filtro-bienestar:checked ~ .container main .bienestar {
+    display: block;
+  }
+  
